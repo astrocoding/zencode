@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+    --color-primary: #F4F4F5;
+    --dark-primary: #262626;
+    --blue-primary: #1e90ff;
+    --font-primary: "Poppins", sans-serif;
+    --font-logo: "Kanit", sans-serif;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    background: var(--color-primary);
+}
+
+/* header and navigation menu */
+header {
+    background: #fff;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-shadow: -1px 7px 9px -5px rgba(135,139,143,0.76);
+    -webkit-box-shadow: -1px 7px 9px -5px rgba(135,139,143,0.76);
+    -moz-box-shadow: -1px 7px 9px -5px rgba(135,139,143,0.76);
+}
+header .logo {
+    font-size: 30px;
+    font-family: var(--font-logo);
+    text-transform: uppercase;
+}
+header .logo a {
+    color: var(--dark-primary);
+}
+header .logo span {
+    font-weight: 800;
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    display: inline-block;
+    color: var(--dark-primary);
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: var(--blue-primary);
+}
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: var(--dark-primary);
+}
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    animation: slideDown 0.5s;
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* section and banner area */
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 110px 100px;
+	color: var(--dark-primary);
+}
+section p {
+	max-width: 800px;
+	text-align: center;
+	margin-bottom: 35px;
+	padding: 0 20px;
+	line-height: 2;
+}
+.banner-area {
+	position: relative;
+	justify-content: center;
+	min-height: 92vh;
+	color: #fff;
+	text-align: center;
+}
+.banner-area .banner-img {
+	background-image: url(/images/bg-image.jpg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	z-index: -1;
+	background-position: center center;
+}
+.banner-area .banner-img::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--dark-primary);
+	opacity: .7;
+}
+.banner-area h1 {
+	margin-bottom: 15px;
+	font-size: 65px;
+	text-transform: uppercase;
+}
+.banner-area h1 span {
+	color: var(--blue-primary);
+}
+.banner-area h3 {
+	font-size: 25px;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+.banner-area a.banner-btn {
+	padding: 15px 35px;
+	background: var(--blue-primary);
+    border-radius: 5px;
+	text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.p-100 {
+    padding: 100px 0;
+}
+
+/* Our Program area */
+.program {
+    background-color: var(--dark-primary);
+}
+.program .row {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.program .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem;
+    color: #fff;
+}
+
+.program .icon {
+    margin-right: 0;
+    padding: 10px;
+}
+
+.program .box:hover {
+    background-color: #3d3d3d;
+    transition: .5s ease-in-out;
+}
+
+
+/* Section Title */
+.section-title {
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #262626;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+.section-title span {
+    color: var(--blue-primary);
+}
+
+
+/* Our Courses Cardview */
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin: 1% auto 0;
+}
+.single-card {
+	position: relative;
+	width: 300px;
+	height: 360px;
+	margin: 15px;
+    transition: box-shadow 0.3s ease;
+	overflow: hidden;
+	background: var(--color-primary);
+	border-radius: 10px;
+	transition: all 0.8s ease-in-out;
+    box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+}
+.single-card:hover {
+	transform: translateY(-10px);
+}
+.img-area {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+.img-area img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+.img-area:hover img {
+	transform: scale(1.1);
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 174, 255, 0.8);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+.single-card:hover .overlay {
+	opacity: 1;
+}
+.enroll, .view-details {
+	background-color: #fff;
+	color: #2e2d2d;
+    width: 50%;
+	padding: 10px 20px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	margin-bottom: 10px;
+}
+.enroll:hover, .view-details:hover {
+	background-color: rgb(58, 58, 71);
+	color: #fff;
+	border: none;
+}
+.info {
+	padding: 10px;
+	text-align: center;
+	color: #2e2d2d;
+}
+.info h3 {
+	margin: 0 10px;
+	font-size: 23px;
+	font-weight: bold;
+}
+.info p {
+    padding-bottom: 5px;
+}
+
+/* aside profile area */
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+}
+.user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    width: 83%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+}
+.user-card:before {
+    content: '';
+    position: absolute;
+    height: 300%;
+    width: 173px;
+    background: #262626;
+    top: -60px;
+    left: -125px;
+    z-index: 0;
+    transform: rotate(17deg);
+}
+.user-card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    z-index: 3;
+}
+.user-card-img img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+.user-card-info {
+    text-align: center;
+}
+.user-card-info h2 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.user-card-info p {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+.user-card-info p span {
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+/* back to top button */
+.backtotop{
+    width:50px;
+    height:50px;
+    position:fixed;
+    display: inline-block;
+    bottom:20px;
+    right:20px;
+    border-radius: 50%;
+    border:2px solid var(--color-primary);
+    background-color: #262626;
+    color: var(--color-primary);
+    font-size: 30px;
+    text-align: center;
+    z-index: 999;
+}
+.backtotop i{
+    margin-top: 10px;
+}
+
+/* footer area */
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+	background-color: #262626;
+    margin-top: 25px;
+	padding: 60px 0;
+}
+
+/* media query for web responsive */
+@media only screen and (min-width: 768px) {
+    .user-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }   
+    .user-card-img {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    .user-card-info {
+        text-align: left;
+    }
+}
+
+@media (max-width:1000px) {
+	section {
+		padding: 100px 50px;
+	}
+    .program .row {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width:600px) {
+	section {
+		padding: 125px 30px;
+	}
+}
+
+@media (max-width: 767px){
+    .banner-area {
+		min-height: 600px;
+	}
+	.banner-area h1 {
+		font-size: 27px;
+	}
+	.banner-area h3 {
+		font-size: 20px;
+	}
+	.banner-area a.banner-btn {
+		padding: 8px 20px;
+	}
+    .section-title {
+        font-size: 30px;
+    }
+    .single-card {
+        width: 82%;
+    }
+    .enroll, .view-details {
+        width: 80%;
+    }
+    .program .row {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .user {
+        padding-top: 3%;
+    }
+    .user-card:before {
+        width: 300%;
+        height: 200px;
+        transform: rotate(0);
+    }
+    .user-card-info h2 {
+        margin-top: 25px;
+        font-size: 35px;
+    }
+    .user-card-info p span {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: #fff;
+        padding: 30px;
+        transition: 0.3s;
+        z-index: 9999;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
